@@ -21,7 +21,7 @@
                     </section>
                     <nav>
                         <ul id="menu">
-                            <li>@Html.ActionLink("主页", "Index", "Home")</li>
+                            <li>@Html.ActionLink("主页", "Index", "Home",null,new {@class="btn btn-default"})</li>
                             <li>@Html.ActionLink("关于", "About", "Home")</li>
                             <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
                         </ul>
@@ -31,7 +31,7 @@
         </header>
         <div id="body">
             @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
+            <section class="content-wrapper main-content clear-fix" style="width:1000px;">
                 @RenderBody()
             </section>
         </div>
