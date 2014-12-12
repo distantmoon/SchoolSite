@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="zh">
     <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta charset="utf-8" />
         <title>@ViewBag.Title - 我的 ASP.NET MVC 应用程序</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -9,39 +9,31 @@
         @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
     </head>
-    <body>
-        <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("将你的徽标放置在此处", "Index", "Home")</p>
-                </div>
-                <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("主页", "Index", "Home",null,new {@class="btn btn-default"})</li>
-                            <li>@Html.ActionLink("关于", "About", "Home")</li>
-                            <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
-                        </ul>
-                    </nav>
-                </div>
+    <body style="background-color: rgb(230,230,230);">
+        <div class="container" style=" width: 100%; height: 110px; background-color: #d3d3d3;"></div>
+        <nav class="navbar " role="navigation" style="background-color: rgb(196,227,243);color:beige;">
+            <div class="container" style="width: 1000px;">
+                <ul class="nav navbar-nav h4" >
+                    <li class="active"><a href="#">首页 </a></li>
+                    <li><a href="#">院系概况</a></li>
+                    <li><a href="#">专业设置</a></li>
+                    <li><a href="#">招生就业</a></li>
+                    <li><a href="#">合作交流</a></li>
+                    <li><a href="#">学生工作</a></li>
+                    <li><a href="#">文件下载</a></li>
+                </ul>
             </div>
-        </header>
-        <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix" style="width:1000px;">
-                @RenderBody()
-            </section>
+        </nav>
+        <div class="container" style="width: 1000px;padding-left: 0px;padding-right: 0px;">
+                 @RenderBody()
+            </div>
+          
+               
+        <div class="container">
+            
+                <p class="text-center">Copyright © 2014 西安交通大学城市学院人文社科系 All Rights Reserved. </p>
+                <p class="text-center">人文社科系联系电话：18092049367</p>
         </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - 我的 ASP.NET MVC 应用程序</p>
-                </div>
-            </div>
-        </footer>
 
         @Scripts.Render("~/bundles/jquery")
         @RenderSection("scripts", required: false)
