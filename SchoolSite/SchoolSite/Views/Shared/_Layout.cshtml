@@ -10,7 +10,9 @@
         @Scripts.Render("~/bundles/modernizr")
     </head>
     <body style="background-color: rgb(230,230,230);">
-        <div class="container" style=" width: 100%; height: 110px; background-color: #d3d3d3;"></div>
+        <div class="container" style=" width:100%; height: 110px; background-color: white;">
+            <img src="@Url.Content("~/Content/images/logo.jpg")" class="img-responsive center-block"/>
+        </div>
         <nav class="navbar " role="navigation" style="background-color: rgb(196,227,243);color:beige;">
             <div class="container" style="width: 1000px;">
                 <ul class="nav navbar-nav h4" >
@@ -24,7 +26,7 @@
                 </ul>
             </div>
         </nav>
-        <div class="container" style="width: 1000px;padding-left: 0px;padding-right: 0px;">
+        <div class="container" style="width:970px;background-color: #dcdcdc;padding-left: 0px;padding-right: 0px;">
                  @RenderBody()
             </div>
           
