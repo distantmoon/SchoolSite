@@ -177,43 +177,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\ga.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\1.png" />
     <Content Include="Content\images\2.png" />
-    <Content Include="Content\images\3.jpg" />
     <Content Include="Content\images\3.png" />
-    <Content Include="Content\images\dh_01.jpg" />
-    <Content Include="Content\images\dh_02.jpg" />
-    <Content Include="Content\images\dh_03.jpg" />
-    <Content Include="Content\images\dh_04.jpg" />
-    <Content Include="Content\images\dh_05.jpg" />
-    <Content Include="Content\images\dh_06.jpg" />
-    <Content Include="Content\images\dh_07.jpg" />
-    <Content Include="Content\images\ico.gif" />
-    <Content Include="Content\images\index_01.jpg" />
-    <Content Include="Content\images\index_03.jpg" />
-    <Content Include="Content\images\index_04.jpg" />
-    <Content Include="Content\images\index_05.jpg" />
-    <Content Include="Content\images\index_06.jpg" />
-    <Content Include="Content\images\index_07.jpg" />
-    <Content Include="Content\images\index_08.jpg" />
-    <Content Include="Content\images\index_09.jpg" />
-    <Content Include="Content\images\index_11.jpg" />
-    <Content Include="Content\images\index_12.jpg" />
-    <Content Include="Content\images\index_13.jpg" />
-    <Content Include="Content\images\index_14.jpg" />
-    <Content Include="Content\images\index_15.jpg" />
-    <Content Include="Content\images\index_16.jpg" />
-    <Content Include="Content\images\index_17.jpg" />
-    <Content Include="Content\images\index_18.jpg" />
-    <Content Include="Content\images\index_19.jpg" />
-    <Content Include="Content\images\index_20.jpg" />
-    <Content Include="Content\images\index_22.jpg" />
-    <Content Include="Content\images\index_23.jpg" />
     <Content Include="Content\images\logo.jpg" />
     <Content Include="Content\images\ren.jpg" />
-    <Content Include="Content\images\ser1.gif" />
-    <Content Include="Content\School.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -269,9 +241,17 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
     <None Include="Properties\PublishProfiles\School.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
@@ -287,6 +267,7 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\npm.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -294,6 +275,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Content\Site.css" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
@@ -325,14 +307,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Shared\_NewLayout.cshtml" />
-    <Content Include="Views\Shared\_LongCSS.cshtml" />
-    <Content Include="Views\Shared\_NavigationTable.cshtml" />
-    <Content Include="Views\Shared\_Index6.cshtml" />
-    <Content Include="Views\Shared\_DateAndSearch.cshtml" />
-    <Content Include="Views\Shared\_ZhaoSheng.cshtml" />
-    <Content Include="Views\Shared\View1.cshtml" />
-    <Content Include="Views\Shared\View2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
