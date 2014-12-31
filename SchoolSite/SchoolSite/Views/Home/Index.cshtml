@@ -17,14 +17,10 @@ white-space: nowrap;
     .panel-title {
         color: #63cb1c;
         font-weight: bold;
+        display: inline-block;
     }
 
-    .panel-heading {
-        background: -webkit-linear-gradient(left, white, green); /* Safari 5.1 - 6.0 */
-        background: -o-linear-gradient(right, white, green); /* Opera 11.1 - 12.0 */
-        background: -moz-linear-gradient(right, white, green); /* Firefox 3.6 - 15 */
-        background: linear-gradient(to right, white, green); /* 标准的语法（必须放在最后） */
-    }
+    
 </style>
 <div class="col-md-8" style="padding-left: 0px;padding-right: 0px;">
     <div class="carousel slide" data-ride="carousel" id="myCarousel" style="height: 300px;overflow: hidden;margin-top: -20px;">
@@ -70,7 +66,8 @@ white-space: nowrap;
 <div class="col-md-4" style="padding-left: 0px;padding-right: 0px;margin-top: -20px;">
     <div class="panel panel-info" style="height: 300px;">
         <div class="panel-heading ">
-            <div class="panel-title" >院系新闻</div>
+            <div class="panel-title" >院系新闻  </div>
+            <div style="float:right;">更多</div>
         </div>
         <div class="panel-body">
             <ul class="normal list-unstyled">
@@ -115,7 +112,8 @@ white-space: nowrap;
     <div class="col-md-4"  style="padding-left: 0px;padding-right: 0px;margin-top: -20px;">
         <div class="panel panel-info" style="margin-bottom: 5px;height: 300px;">
             <div class="panel-heading">
-                <div class="panel-title">最新通知</div>
+                <div class="panel-title"  >最新通知</div>
+                <div style="float:right;">更多</div>
             </div>
             <div class="panel-body">
                 <ul class="normal list-unstyled">
