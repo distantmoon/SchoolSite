@@ -9,5 +9,6 @@ namespace SchoolSite.Models
     public class SchoolDbContext:DbContext
     {
         public DbSet<NewsModel> NewsModels { get; set; }
+        public DbSet<Notice> Notices { get; set; }
     }
 }
