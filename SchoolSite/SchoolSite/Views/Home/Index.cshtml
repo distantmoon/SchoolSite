@@ -1,14 +1,19 @@
 ﻿
 <style>
- ul.normal li a {
-display: block;
-overflow: hidden;
-text-overflow: ellipsis;
-white-space: nowrap;
-}
- ul.normal li span {
-     float: right;
- }
+
+    ul.normal li {
+        list-style: disc inside content("\f1eb");
+    }
+
+     ul.normal li a {
+         display: block;
+         overflow: hidden;
+         text-overflow: ellipsis;
+         white-space: nowrap;
+     }
+    ul.normal li span {
+        float: right;
+    }
 
     .panel {
         border-radius: 10px;
@@ -19,8 +24,6 @@ white-space: nowrap;
         font-weight: bold;
         display: inline-block;
     }
-
-    
 </style>
 <div class="col-md-8" style="padding-left: 0px;padding-right: 0px;">
     <div class="carousel slide" data-ride="carousel" id="myCarousel" style="height: 300px;overflow: hidden;margin-top: -20px;">
@@ -66,7 +69,7 @@ white-space: nowrap;
 <div class="col-md-4" style="padding-left: 0px;padding-right: 0px;margin-top: -20px;">
     <div class="panel panel-info" style="height: 300px;">
         <div class="panel-heading ">
-            <div class="panel-title" >院系新闻  </div>
+            <div class="panel-title" ><i class="fa fa-newspaper-o fa-lg" style="color:orange;"></i>院系新闻  </div>
             <div style="float:right;">更多</div>
         </div>
         <div class="panel-body">
@@ -112,7 +115,9 @@ white-space: nowrap;
     <div class="col-md-4"  style="padding-left: 0px;padding-right: 0px;margin-top: -20px;">
         <div class="panel panel-info" style="margin-bottom: 5px;height: 300px;">
             <div class="panel-heading">
-                <div class="panel-title"  >最新通知</div>
+                <div class="panel-title"  >
+                    <i class="fa fa-envelope fa-lg" style="color:orange;" ></i>最新通知
+                </div>
                 <div style="float:right;">更多</div>
             </div>
             <div class="panel-body">
@@ -156,7 +161,7 @@ white-space: nowrap;
 <div class="col-md-8" style="padding-left: 0px;padding-right: 0px;margin-top: -20px;">
     <div class="panel panel-info" style="margin-bottom: 5px;height: 300px;">
         <div class="panel-heading">
-            <div class="panel-title">师生风采</div>
+            <div class="panel-title"><i class="fa fa-thumbs-o-up fa-lg" style="color:orange;background-position: bottom;;"></i>师生风采</div>
         </div>
         <div class="panel-body">
             <ul class="normal list-unstyled">
@@ -200,7 +205,7 @@ white-space: nowrap;
 <div class="col-md-12" style="padding-left: 0px;padding-right: 0px;margin-top: -20px;">
     <div class="panel  panel-info">
         <div class="panel-heading">
-            <div class="panel-title">友情链接</div>
+            <div class="panel-title"><i class="fa fa-link fa-lg" style="color: orange;"></i>友情链接></div>
         </div>
         <div class="panel-body">
         </div>
@@ -211,9 +216,13 @@ white-space: nowrap;
 <div class="col-md-12" style="padding-left: 0px;padding-right: 0px;margin-top: -20px;">
     <div class="panel  panel-info">
         <div class="panel-heading">
-            <div class="panel-title">联系我们</div>
+            <div class="panel-title"><i class="fa fa-phone fa-lg"  style="color:orange;"></i>联系我们</div>
         </div>
         <div class="panel-body">
+            <i class="fa fa-spinner fa-spin"></i>
+            <i class="fa fa-circle-o-notch fa-spin"></i>
+            <i class="fa fa-refresh fa-spin"></i>
+            <i class="fa fa-cog fa-spin"></i>
         </div>
 
     </div>
