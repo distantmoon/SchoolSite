@@ -341,6 +341,7 @@
     <Content Include="Views\Research\Index.cshtml" />
     <Content Include="Views\Show\Index.cshtml" />
     <Content Include="Views\Shared\_NewsList.cshtml" />
+    <Content Include="Views\Shared\_NoticeList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

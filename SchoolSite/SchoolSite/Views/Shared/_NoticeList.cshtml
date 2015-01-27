@@ -1,0 +1,10 @@
+﻿@using SchoolSite.Models
+@model List<SchoolSite.Models.Notice>
+           
+@foreach (Notice notice in Model)
+{
+    <li>
+        <span>@notice.DateTime.ToShortDateString()</span>
+        <a href="@Url.Action("Details", "News", new { Id = @notice.Id })" title="@notice.Title">@notice.Title</a>
+    </li>
+}

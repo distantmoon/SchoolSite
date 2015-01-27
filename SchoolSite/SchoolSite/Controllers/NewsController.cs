@@ -57,11 +57,10 @@ namespace SchoolSite.Controllers
 
             if (ModelState.IsValid)
             {
-                for (int i = 0; i < 20; i++)
-                {
+               
                     db.NewsModels.Add(newsmodel);
                     db.SaveChanges();
-                }
+                
                 
                 return RedirectToAction("Index");
             }

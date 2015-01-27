@@ -18,6 +18,10 @@ namespace SchoolSite.Controllers
 
         public ActionResult Index()
         {
+            if (this.Request.IsAjaxRequest())
+            {
+                return PartialView("_NoticeList", db.Notices.Take(11).ToList());
+            }
             return View(db.Notices.ToList());
         }
 
@@ -51,8 +55,11 @@ namespace SchoolSite.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Notices.Add(notice);
-                db.SaveChanges();
+               
+                    db.Notices.Add(notice);
+                    db.SaveChanges();
+               
+                
                 return RedirectToAction("Index");
             }
 
