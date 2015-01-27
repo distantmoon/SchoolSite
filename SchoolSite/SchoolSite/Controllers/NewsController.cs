@@ -49,10 +49,15 @@ namespace SchoolSite.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(NewsModel newsmodel)
         {
+
             if (ModelState.IsValid)
             {
-                db.NewsModels.Add(newsmodel);
-                db.SaveChanges();
+                for (int i = 0; i < 20; i++)
+                {
+                    db.NewsModels.Add(newsmodel);
+                    db.SaveChanges();
+                }
+                
                 return RedirectToAction("Index");
             }
 
