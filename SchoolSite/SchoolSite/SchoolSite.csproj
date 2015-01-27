@@ -168,9 +168,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CommunicationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\NoticeController.cs" />
+    <Compile Include="Controllers\ProfessionController.cs" />
+    <Compile Include="Controllers\ResearchController.cs" />
+    <Compile Include="Controllers\ShowController.cs" />
+    <Compile Include="Controllers\TeachController.cs" />
+    <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -329,6 +335,12 @@
     <Content Include="Views\Notice\Create.cshtml" />
     <Content Include="Views\Notice\Edit.cshtml" />
     <Content Include="Views\Notice\Delete.cshtml" />
+    <Content Include="Views\Communication\Index.cshtml" />
+    <Content Include="Views\Profession\Index.cshtml" />
+    <Content Include="Views\Teacher\Index.cshtml" />
+    <Content Include="Views\Teach\Index.cshtml" />
+    <Content Include="Views\Research\Index.cshtml" />
+    <Content Include="Views\Show\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
