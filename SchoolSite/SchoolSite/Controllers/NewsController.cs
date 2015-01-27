@@ -18,6 +18,11 @@ namespace SchoolSite.Controllers
 
         public ActionResult Index()
         {
+
+            if (this.Request.IsAjaxRequest())
+            {
+                return PartialView("_NewsList", db.NewsModels.Take(12).ToList());
+            }
             return View(db.NewsModels.ToList());
         }
 

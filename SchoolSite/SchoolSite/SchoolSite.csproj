@@ -340,6 +340,7 @@
     <Content Include="Views\Teach\Index.cshtml" />
     <Content Include="Views\Research\Index.cshtml" />
     <Content Include="Views\Show\Index.cshtml" />
+    <Content Include="Views\Shared\_NewsList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

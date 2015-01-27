@@ -73,39 +73,7 @@
             <div style="float:right;">@Html.ActionLink("更多", "Index", "News")</div>
         </div>
         <div class="panel-body">
-            <ul class="normal list-unstyled">
-                <li>
-                    <span>2014-12-10</span>
-                    <a href="./?p=14&amp;a=view&amp;r=175" target="_blank">西安交大城市学院外语系举办第一届日语诵读大赛 </a>
-                </li>
-                <li>
-                    <span>2014-12-04</span>
-                    <a href="./?p=14&amp;a=view&amp;r=173" target="_blank">西安交大城市学院“2014年笹川杯全国高校日本知识大赛”获佳绩 </a>
-                </li>
-                <li>
-                    <span>2014-12-04</span>
-                    <a href="./?p=14&amp;a=view&amp;r=174" target="_blank">西安交通大学城市学院外语系金秋外语文化节之第三届英文诵读比赛落幕 </a>
-                </li>
-                <li>
-                    <span>2014-11-27</span>
-                    <a href="./?p=14&amp;a=view&amp;r=172" target="_blank">西安交大城市学院外语系日语教研室举办新老生学习交流会 </a>
-                </li>
-                <li>
-                    <span>2014-11-25</span>
-                    <a href="./?p=14&amp;a=view&amp;r=170" target="_blank">西安交通大学城市学院外语系公派赴日友好交流选拔动员大会召开 </a>
-                </li>
-                <li>
-                    <span>2014-11-20</span>
-                    <a href="./?p=14&amp;a=view&amp;r=169" target="_blank">西安交大城市学院学生在有关大学社团组织的“第四届模拟联合国大会”中获佳绩 </a>
-                </li>
-                <li>
-                    <span>2014-11-19</span>
-                    <a href="./?p=14&amp;a=view&amp;r=168" target="_blank">外语系 2013 级日语专业301班成功举办日语美文诵读比赛</a>
-                </li>
-                <li>
-                    <span>2014-11-19</span>
-                    <a href="./?p=14&amp;a=view&amp;r=171" target="_blank">西安交通大学城市学院外语系“践行核心价值观，实现美好中国梦”主题团日活动结束 </a>
-                </li>
+            <ul class="normal list-unstyled" id="newsUl">
             </ul>
         </div>
     </div>
@@ -227,3 +195,11 @@
 
     </div>
 </div>
+@section Scripts
+{
+    <script>
+        $(document).ready(function() {
+            $("#newsUl").load("/News/Index");
+        });
+    </script>
+}
