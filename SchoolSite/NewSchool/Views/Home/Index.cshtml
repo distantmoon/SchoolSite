@@ -33,7 +33,8 @@
             <li data-target="#myCarousel" data-slide-to="2" class=""></li>
         </ol>
         <div class="carousel-inner" role="listbox">
-            <div class="item active">
+            @Html.Action("Show","News")
+            @* <div class="item active">
                 <img data-src="holder.js/1000x500/auto/#777:#777" alt="900x500" src="@Url.Content("~/Content/images/1.png")" data-holder-rendered="true">
                 <div class="carousel-caption">
                     <h3>First slide label</h3>
@@ -53,7 +54,7 @@
                     <h3>Third slide label</h3>
                     <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                 </div>
-            </div>
+            </div>*@
         </div>
         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left"></span>
@@ -99,41 +100,9 @@
         <div class="panel-heading">
             <div class="panel-title"><i class="fa fa-thumbs-o-up fa-lg" style="color:orange;background-position: bottom;"></i>师生风采</div>
         </div>
-        <div class="panel-body">
-            <ul class="normal list-unstyled">
-                <li>
-                    <span>2014-12-10</span>
-                    <a href="./?p=14&amp;a=view&amp;r=175" target="_blank">西安交大城市学院外语系举办第一届日语诵读大赛 </a>
-                </li>
-                <li>
-                    <span>2014-12-04</span>
-                    <a href="./?p=14&amp;a=view&amp;r=173" target="_blank">西安交大城市学院“2014年笹川杯全国高校日本知识大赛”获佳绩 </a>
-                </li>
-                <li>
-                    <span>2014-12-04</span>
-                    <a href="./?p=14&amp;a=view&amp;r=174" target="_blank">西安交通大学城市学院外语系金秋外语文化节之第三届英文诵读比赛落幕 </a>
-                </li>
-                <li>
-                    <span>2014-11-27</span>
-                    <a href="./?p=14&amp;a=view&amp;r=172" target="_blank">西安交大城市学院外语系日语教研室举办新老生学习交流会 </a>
-                </li>
-                <li>
-                    <span>2014-11-25</span>
-                    <a href="./?p=14&amp;a=view&amp;r=170" target="_blank">西安交通大学城市学院外语系公派赴日友好交流选拔动员大会召开 </a>
-                </li>
-                <li>
-                    <span>2014-11-20</span>
-                    <a href="./?p=14&amp;a=view&amp;r=169" target="_blank">西安交大城市学院学生在有关大学社团组织的“第四届模拟联合国大会”中获佳绩 </a>
-                </li>
-                <li>
-                    <span>2014-11-19</span>
-                    <a href="./?p=14&amp;a=view&amp;r=168" target="_blank">外语系 2013 级日语专业301班成功举办日语美文诵读比赛</a>
-                </li>
-                <li>
-                    <span>2014-11-19</span>
-                    <a href="./?p=14&amp;a=view&amp;r=171" target="_blank">西安交通大学城市学院外语系“践行核心价值观，实现美好中国梦”主题团日活动结束 </a>
-                </li>
-            </ul>
+        <div class="panel-body" style="padding: 0px;">
+            <marquee style="margin: 0px;" id="affiche" align="left" behavior="alternate" direction="up" height="370" width="640" hspace="50" vspace="20" loop="-1" scrollamount="1" scrolldelay="0" onmouseout="this.start()" onmouseover="this.stop()">
+            </marquee>
         </div>
     </div>
 </div> 
@@ -169,6 +138,7 @@
         $(document).ready(function() {
             $("#newsUl").load("@Url.Action("Index","News")");
             $("#noticeUl").load("@Url.Action("Index","Notice")");  
+            $("#affiche").load("@Url.Action("Index","Show")");  
         });
     </script>
 }

@@ -1,0 +1,35 @@
+﻿@using NewSchool.Models
+@model List<NewSchool.Models.NewsModel>
+@if (Model != null && Model.Count > 2)
+{
+   <div class="item active">
+    <img data-src="holder.js/1000x500/auto/#777:#777" alt="900x500" src="@Url.Action("GetImage","News",new {Model[0].Id})" data-holder-rendered="true">
+    <div class="carousel-caption">
+        <h3>@Model[0].Title</h3>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </p>
+    </div>
+</div>
+<div class="item ">
+    <img data-src="holder.js/1000x500/auto/#777:#777" alt="900x500" src="@Url.Action("GetImage","News",new {Model[1].Id})" data-holder-rendered="true">
+    <div class="carousel-caption">
+        <h3>@Model[1].Title</h3>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </p>
+    </div>
+</div>
+<div class="item ">
+    <img data-src="holder.js/1000x500/auto/#777:#777" alt="900x500" src="@Url.Action("GetImage","News",new {Model[2].Id})" data-holder-rendered="true">
+    <div class="carousel-caption">
+        <h3>@Model[2].Title</h3>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </p>
+    </div>
+</div> 
+}

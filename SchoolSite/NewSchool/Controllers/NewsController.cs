@@ -3,6 +3,7 @@ using System.Data;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using NewSchool.Models;
@@ -41,6 +42,18 @@ namespace NewSchool.Controllers
             }).ToList());
         }
 
+        public ActionResult Show()
+        {
+            return PartialView("_NewsShowList",
+                   db.News.Take(3).OrderByDescending(p => p.CreateTime).Select(p => new NewsModel
+                   {
+                       Content = p.Content,
+                       CreateTime = p.CreateTime,
+                       Id = p.Id,
+                       Title = p.Title,
+                       ImageName = p.ImageName
+                   }).ToList());
+        }
         //
         // GET: /News/Details/5
 

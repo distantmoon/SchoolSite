@@ -1,0 +1,21 @@
+﻿@using NewSchool.Models
+@model List<NewSchool.Models.ShowModel>
+           
+@foreach (ShowModel notice in Model)
+{
+    <div class="well">
+        @if (!string.IsNullOrEmpty(notice.ImageName))
+        {
+            <img style="height: 200px; width: 200px;" src="@Url.Action("GetImage", "Show", new {notice.Id})" />
+
+        }
+        else
+        {
+                     <img style="height: 200px; width: 200px;" src="@Url.Content("~/Images/noimage.jpg")" />
+        }
+        <div style="float:right;width: 380px;">
+            <p>@notice.Title</p>
+            <p>@Html.Raw(@notice.Content)</p>
+        </div>
+        </div> 
+}

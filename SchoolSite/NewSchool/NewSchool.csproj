@@ -322,6 +322,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <None Include="Properties\PublishProfiles\NewSite.pubxml" />
+    <Content Include="Images\noimage.jpg" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
     <Content Include="Scripts\ckeditor\LICENSE.md" />
     <Content Include="Scripts\ckeditor\plugins\scayt\LICENSE.md" />
@@ -706,6 +707,8 @@
     <Content Include="Views\Profession\Delete.cshtml" />
     <Content Include="Views\Profession\Details.cshtml" />
     <Content Include="Views\Profession\Edit.cshtml" />
+    <Content Include="Views\Shared\_ShowList.cshtml" />
+    <Content Include="Views\Shared\_NewsShowList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

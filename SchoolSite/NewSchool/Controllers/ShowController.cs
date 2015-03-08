@@ -19,6 +19,18 @@ namespace NewSchool.Controllers
 
         public ActionResult Index()
         {
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_ShowList",
+                    db.Show.OrderByDescending(p => p.CreateTime).Select(p => new ShowModel
+                    {
+                        Content = p.Content,
+                        CreateTime = p.CreateTime,
+                        Id = p.Id,
+                        Title = p.Title,
+                        ImageName = p.ImageName
+                    }).ToList());
+            }
             return View(db.Show.OrderByDescending(p => p.CreateTime).Select(p => new ShowModel
             {
                 Content = p.Content,
@@ -174,6 +186,23 @@ namespace NewSchool.Controllers
             return View(model);
         }
 
+
+         public ActionResult GetImage(int id)
+         {
+             Show newsModel = db.Show.Find(id);
+             if (newsModel == null || string.IsNullOrEmpty(newsModel.ImageName))
+             {
+                 return new EmptyResult();
+             }
+
+             string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "newsimage",
+                 newsModel.ImageName + ".jpeg");
+             if (System.IO.File.Exists(filePath))
+             {
+                 return new FilePathResult(filePath, "image/jpeg");
+             }
+             return new EmptyResult();
+         }
         //
         // POST: /News/Delete/5
          [Authorize]
