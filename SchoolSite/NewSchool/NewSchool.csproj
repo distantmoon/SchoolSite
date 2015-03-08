@@ -709,6 +709,8 @@
     <Content Include="Views\Profession\Edit.cshtml" />
     <Content Include="Views\Shared\_ShowList.cshtml" />
     <Content Include="Views\Shared\_NewsShowList.cshtml" />
+    <Content Include="Views\Shared\_ScrollImage.cshtml" />
+    <Content Include="Views\News\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
