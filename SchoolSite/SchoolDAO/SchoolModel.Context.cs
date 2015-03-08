@@ -32,5 +32,6 @@ namespace SchoolDAO
         public DbSet<Teacher> Teacher { get; set; }
         public DbSet<Show> Show { get; set; }
         public DbSet<Profession> Profession { get; set; }
+        public DbSet<Comm> Comm { get; set; }
     }
 }

@@ -1,2 +1,62 @@
-﻿
-<h2>title</h2>
+﻿@using NewSchool.Models
+@using NewSchool.Util
+@model IEnumerable<NewSchool.Models.CommModel>
+
+@{
+    ViewBag.Title = "合作交流";
+}
+@Html.Partial("_ScrollImage")
+<div class="col-md-3">
+    @Html.Partial("_VMenu")
+</div>
+<div class="col-md-9" style="padding-left: 0px; padding-right: 0px;">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title">
+                @ViewBag.Title
+                @if (Request.IsAuthenticated)
+                {
+                    @Html.ActionLink("添加合作交流", "Create", null, new { @class = "btn btn-default" })
+                }
+            </div>
+        </div>
+        <div class="panel-body">
+            @if (Model != null && Model.Any())
+            {
+                foreach (CommModel researchModel in Model)
+                {
+                    <div class="panel col-md-6 panel-info" style="padding: 5px;">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                @researchModel.Title
+                                @if (Request.IsAuthenticated)
+                                {
+                                    @Html.ActionLink("修改", "Edit", new { id = researchModel.Id })
+                                    @Html.ActionLink("删除", "Delete", new { id = researchModel.Id })
+                                }
+
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="well">
+                                @if (!string.IsNullOrEmpty(researchModel.ImageName))
+                                {
+                                    <img style="height: 200px; width: 200px;" src="@Url.Action("GetImage", "Show", new { researchModel.Id })" />
+
+                                }
+                                else
+                                {
+                                    <img style="height: 200px; width: 200px;" src="@Url.Content("~/Images/noimage.jpg")" />
+                                }
+                                <p style="text-indent: 2em;">
+                                    @researchModel.Content.NoHTML().CutNum(40)
+                                    @Html.ActionLink("详细", "Details", new { researchModel.Id })
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

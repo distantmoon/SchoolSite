@@ -4,40 +4,53 @@
 @{
     ViewBag.Title = "科研工作";
 }
+
+
 @Html.Partial("_ScrollImage")
-<h2>科研工作列表</h2>
-@if (Request.IsAuthenticated)
-{
-    <p>
-        @Html.ActionLink("添加科研工作", "Create", null, new { @class = "btn btn-primary" })
-    </p>
-    <ol class="list-group">
-        @if (Model != null && Model.Any())
-        {
-            foreach (ResearchModel newsModel in Model)
-            {
-                <li class="list-group-item">
-                    @Html.ActionLink("修改", "Edit", new { id = newsModel.Id }) |
-                    @Html.ActionLink("删除", "Delete", new { id = newsModel.Id })
-                    @newsModel.CreateTime.ToShortDateString()
-                    @Html.ActionLink(newsModel.Title, "Details", new { id = newsModel.Id })
-                </li>
+<div class="col-md-3">
+    @Html.Partial("_VMenu")
+</div>
+<div class="col-md-9" style="padding-left: 0px; padding-right: 0px;">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title">
+                @ViewBag.Title
+                @if (Request.IsAuthenticated)
+                {
+                    @Html.ActionLink("添加科研工作", "Create", null, new { @class = "btn btn-default" })
+                }
+            </div>
+        </div>
+        <div class="panel-body">
+            <ol class="list-group">
+                @if (Model != null && Model.Any())
+                {
+                    foreach (ResearchModel newsModel in Model)
+                    {
+                        <li class="list-group-item">
+                            @Html.ActionLink("修改", "Edit", new { id = newsModel.Id }) |
+                            @Html.ActionLink("删除", "Delete", new { id = newsModel.Id })
+                            @newsModel.CreateTime.ToShortDateString()
+                            @Html.ActionLink(newsModel.Title, "Details", new { id = newsModel.Id })
+                        </li>
 
-            }
-        }
-    </ol>
-}
-else
-{
-    if (Model != null && Model.Any())
-    {
-        foreach (ResearchModel newsModel in Model)
-        {
-            <li class="list-group-item">
-                @newsModel.CreateTime.ToShortDateString()
-                @Html.ActionLink(newsModel.Title, "Details", new { id = newsModel.Id })
-            </li>
+                    }
+                }
+                else
+                {
+                    if (Model != null && Model.Any())
+                    {
+                        foreach (ResearchModel newsModel in Model)
+                        {
+                            <li class="list-group-item">
+                                @newsModel.CreateTime.ToShortDateString()
+                                @Html.ActionLink(newsModel.Title, "Details", new { id = newsModel.Id })
+                            </li>
 
-        }
-    }
-}
+                        }
+                    }
+                }
+            </ol>
+        </div>
+    </div>
+</div>

@@ -28,7 +28,22 @@ namespace NewSchool.Controllers
                 ImageName = p.ImageName
             }).ToList());
         }
+        public ActionResult GetImage(int id)
+        {
+            Teacher newsModel = db.Teacher.Find(id);
+            if (newsModel == null || string.IsNullOrEmpty(newsModel.ImageName))
+            {
+                return new EmptyResult();
+            }
 
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "newsimage",
+                newsModel.ImageName + ".jpeg");
+            if (System.IO.File.Exists(filePath))
+            {
+                return new FilePathResult(filePath, "image/jpeg");
+            }
+            return new EmptyResult();
+        }
         //
         // GET: /News/Details/5
 
