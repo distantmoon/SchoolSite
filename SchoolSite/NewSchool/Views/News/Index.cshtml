@@ -1,0 +1,30 @@
+﻿@using NewSchool.Models
+@model IEnumerable<NewSchool.Models.NewsModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>新闻列表</h2>
+
+<p>
+    @Html.ActionLink("添加新闻", "Create",null,new {@class="btn btn-primary"})
+</p>
+
+<ol class="list-group">
+    @if (Model != null && Model.Any())
+    {
+        foreach (NewsModel newsModel in Model)
+         {
+             <li class="list-group-item">
+                 @Html.ActionLink("修改", "Edit", new { id = newsModel.Id }) |
+                 @Html.ActionLink("详细", "Details", new { id = newsModel.Id }) |
+                 @Html.ActionLink("删除", "Delete", new { id = newsModel.Id })
+                 @newsModel.CreateTime.ToShortDateString()
+                 @newsModel.Title
+             </li>
+
+         }
+    }
+</ol>
+

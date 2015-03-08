@@ -1,0 +1,28 @@
+﻿@using NewSchool.Models
+@model IEnumerable<NewSchool.Models.NoticeModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>通知列表</h2>
+
+<p>
+    @Html.ActionLink("添加新通知", "Create","Notice",null,new {@class="btn btn-primary"})
+</p>
+<ul class="list-group">
+    @if (Model != null && Model.Any())
+    {
+        foreach (NoticeModel notice in Model)
+        {
+            <li class="list-group-item">
+                @Html.ActionLink("修改", "Edit", new { id = notice.Id }) |
+                @Html.ActionLink("详细", "Details", new { id = notice.Id }) |
+                @Html.ActionLink("删除", "Delete", new { id = notice.Id })
+                @notice.CreateTime.ToShortDateString()
+                @notice.Title
+            </li>
+
+        }
+    }
+</ul>

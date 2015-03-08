@@ -1,0 +1,36 @@
+﻿@model NewSchool.Models.NoticeModel
+
+@{
+    ViewBag.Title = "删除通知";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>确定删除这条通知吗?</h3>
+<fieldset>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Content)
+    </div>
+   @Html.Raw(Model.Content)
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreateTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreateTime)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+   <p class="text-center">
+            <input type="submit" value="删除" class="btn btn-primary" /> @Html.ActionLink("返回列表", "Index","Notice",null,new  {@class="btn btn-default"})
+        </p>
+}

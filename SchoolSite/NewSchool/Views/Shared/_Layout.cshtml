@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta charset="utf-8" />
+        <title>人文社科系</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        @Styles.Render("~/Content/css")
+        <style>
+            .nav a {
+                color: white;
+                font-weight: bolder;
+            }
+        </style>
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body style="background-color: rgb(230,230,230);">
+        <div class="container" style=" width:100%; height: 110px; background-color: white;">
+            <img src="@Url.Content("~/Content/images/logo.jpg")" class="img-responsive center-block"/>
+        </div>
+        <nav class="navbar " role="navigation" style="background-color:#63cb1c;color:beige;">
+            <div class="container" style="width: 1000px;">
+                <ul class="nav navbar-nav h4" >
+                    <li class="active">@Html.ActionLink("首页", "Index", "Home")</li>
+                    <li>@Html.ActionLink("院系概况", "About", "Home")</li>
+                    <li>@Html.ActionLink("师资介绍", "Index", "Teacher")</li>
+                    <li>@Html.ActionLink("专业介绍", "Index", "Profession")</li>
+                    <li>@Html.ActionLink("合作交流", "Index", "Communication")</li>
+                    <li>@Html.ActionLink("教学工作", "Index", "Teach")</li>
+                    <li>@Html.ActionLink("科研工作", "Index", "Research")</li>
+                    <li>@Html.ActionLink("师生风采", "Index", "Show")</li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container" style="width:970px;background-color: #dcdcdc;padding-left: 0px;padding-right: 0px;">
+                 @RenderBody()
+            </div>
+          
+               
+        <div class="container">
+            
+                <p class="text-center">Copyright © 2014 西安交通大学城市学院人文社科系 All Rights Reserved. </p>
+                <p class="text-center">人文社科系联系电话：18092049367</p>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

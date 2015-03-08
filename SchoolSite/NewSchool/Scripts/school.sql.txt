@@ -1,0 +1,40 @@
+create table News(Id int identity(1,1) primary key,
+Title nvarchar(80) not null,
+Content nvarchar(MAX) not null,
+ImageName nvarchar(80),
+CreateTime datetime not null default(getdate()),
+Remark nvarchar(1024))
+
+create table Notices(Id int identity(1,1) primary key,
+Title nvarchar(80) not null,
+Content nvarchar(MAX) not null,
+ImageName nvarchar(80),
+CreateTime datetime not null default(getdate()),
+Remark nvarchar(1024))
+
+create table EducationWorks(Id int identity(1,1) primary key,
+Title nvarchar(80) not null,
+Content nvarchar(MAX) not null,
+ImageName nvarchar(80),
+CreateTime datetime not null default(getdate()),
+Remark nvarchar(1024))
+
+create table StudyWorks(Id int identity(1,1) primary key,
+Title nvarchar(80) not null,
+Content nvarchar(MAX) not null,
+ImageName nvarchar(80),
+CreateTime datetime not null default(getdate()),
+Remark nvarchar(1024))
+
+
+
+delete from News
+
+alter table News add  ImageName nvarchar(80) ;
+
+insert into News(Title,Content,Remark) values('Title','Content','Test')
+
+Create table NewsImage(Id int identity(1,1) primary key,
+NewsId int not null,
+ImageName nvarchar(80) not null,
+CreatedTime not null default(getdate()))

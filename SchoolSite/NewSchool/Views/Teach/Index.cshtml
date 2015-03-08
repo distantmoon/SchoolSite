@@ -1,0 +1,30 @@
+﻿@using NewSchool.Models
+@model IEnumerable<NewSchool.Models.TeachModel>
+
+@{
+    ViewBag.Title = "教学工作";
+}
+
+<h2>教学工作列表</h2>
+
+<p>
+    @Html.ActionLink("添加教学工作", "Create", null, new { @class = "btn btn-primary" })
+</p>
+
+<ol class="list-group">
+    @if (Model != null && Model.Any())
+    {
+        foreach (TeachModel researchModel in Model)
+         {
+             <li class="list-group-item">
+                 @Html.ActionLink("修改", "Edit", new { id = researchModel.Id }) |
+                 @Html.ActionLink("详细", "Details", new { id = researchModel.Id }) |
+                 @Html.ActionLink("删除", "Delete", new { id = researchModel.Id })
+                 @researchModel.CreateTime.ToShortDateString()
+                 @researchModel.Title
+             </li>
+
+         }
+    }
+</ol>
+
