@@ -65,7 +65,7 @@ namespace NewSchool.Controllers
 
         //
         // GET: /News/Create
-
+         [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -94,6 +94,7 @@ namespace NewSchool.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
+        [Authorize]
         public ActionResult Create(NewsModel newsmodel)
         {
             if (ModelState.IsValid)
@@ -126,7 +127,7 @@ namespace NewSchool.Controllers
 
         //
         // GET: /News/Edit/5
-
+         [Authorize]
         public ActionResult Edit(int id = 0)
         {
             News newsmodel = db.News.Find(id);
@@ -146,7 +147,7 @@ namespace NewSchool.Controllers
 
         //
         // POST: /News/Edit/5
-
+         [Authorize]
         [HttpPost]
         [ValidateInput(false)]
         [ValidateAntiForgeryToken]
@@ -165,7 +166,7 @@ namespace NewSchool.Controllers
 
         //
         // GET: /News/Delete/5
-
+         [Authorize]
         public ActionResult Delete(int id = 0)
         {
             News newsmodel = db.News.Find(id);
@@ -185,7 +186,7 @@ namespace NewSchool.Controllers
 
         //
         // POST: /News/Delete/5
-
+         [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

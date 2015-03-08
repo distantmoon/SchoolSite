@@ -51,7 +51,7 @@ namespace NewSchool.Controllers
 
         //
         // GET: /News/Create
-
+         [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -76,7 +76,7 @@ namespace NewSchool.Controllers
             
         }*/
 
-
+         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
@@ -118,7 +118,7 @@ namespace NewSchool.Controllers
 
         //
         // GET: /News/Edit/5
-
+         [Authorize]
         public ActionResult Edit(int id = 0)
         {
             StudyWorks studyWorks = db.StudyWorks.Find(id);
@@ -138,7 +138,7 @@ namespace NewSchool.Controllers
 
         //
         // POST: /News/Edit/5
-
+         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
@@ -158,7 +158,7 @@ namespace NewSchool.Controllers
 
         //
         // GET: /News/Delete/5
-
+         [Authorize]
         public ActionResult Delete(int id = 0)
         {
             StudyWorks studyWorks = db.StudyWorks.Find(id);
@@ -178,7 +178,7 @@ namespace NewSchool.Controllers
 
         //
         // POST: /News/Delete/5
-
+         [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

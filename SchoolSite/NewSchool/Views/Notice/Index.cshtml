@@ -7,22 +7,38 @@
 
 <h2>通知列表</h2>
 
-<p>
-    @Html.ActionLink("添加新通知", "Create","Notice",null,new {@class="btn btn-primary"})
-</p>
-<ul class="list-group">
-    @if (Model != null && Model.Any())
+@if (Request.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("添加新通知", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+    <ol class="list-group">
+        @if (Model != null && Model.Any())
+        {
+            foreach (NoticeModel newsModel in Model)
+            {
+                <li class="list-group-item">
+                    @Html.ActionLink("修改", "Edit", new { id = newsModel.Id }) |
+                    @Html.ActionLink("删除", "Delete", new { id = newsModel.Id })
+                    @newsModel.CreateTime.ToShortDateString()
+                    @Html.ActionLink(newsModel.Title, "Details", new { id = newsModel.Id })
+                </li>
+
+            }
+        }
+    </ol>
+}
+else
+{
+    if (Model != null && Model.Any())
     {
-        foreach (NoticeModel notice in Model)
+        foreach (NoticeModel newsModel in Model)
         {
             <li class="list-group-item">
-                @Html.ActionLink("修改", "Edit", new { id = notice.Id }) |
-                @Html.ActionLink("详细", "Details", new { id = notice.Id }) |
-                @Html.ActionLink("删除", "Delete", new { id = notice.Id })
-                @notice.CreateTime.ToShortDateString()
-                @notice.Title
+                @newsModel.CreateTime.ToShortDateString()
+                @Html.ActionLink(newsModel.Title, "Details", new { id = newsModel.Id })
             </li>
 
         }
     }
-</ul>
+}

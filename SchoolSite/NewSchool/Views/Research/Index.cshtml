@@ -6,25 +6,38 @@
 }
 
 <h2>科研工作列表</h2>
+@if (Request.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("添加科研工作", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+    <ol class="list-group">
+        @if (Model != null && Model.Any())
+        {
+            foreach (ResearchModel newsModel in Model)
+            {
+                <li class="list-group-item">
+                    @Html.ActionLink("修改", "Edit", new { id = newsModel.Id }) |
+                    @Html.ActionLink("删除", "Delete", new { id = newsModel.Id })
+                    @newsModel.CreateTime.ToShortDateString()
+                    @Html.ActionLink(newsModel.Title, "Details", new { id = newsModel.Id })
+                </li>
 
-<p>
-    @Html.ActionLink("添加科研工作", "Create", null, new { @class = "btn btn-primary" })
-</p>
-
-<ol class="list-group">
-    @if (Model != null && Model.Any())
+            }
+        }
+    </ol>
+}
+else
+{
+    if (Model != null && Model.Any())
     {
-        foreach (ResearchModel researchModel in Model)
-         {
-             <li class="list-group-item">
-                 @Html.ActionLink("修改", "Edit", new { id = researchModel.Id }) |
-                 @Html.ActionLink("详细", "Details", new { id = researchModel.Id }) |
-                 @Html.ActionLink("删除", "Delete", new { id = researchModel.Id })
-                 @researchModel.CreateTime.ToShortDateString()
-                 @researchModel.Title
-             </li>
+        foreach (ResearchModel newsModel in Model)
+        {
+            <li class="list-group-item">
+                @newsModel.CreateTime.ToShortDateString()
+                @Html.ActionLink(newsModel.Title, "Details", new { id = newsModel.Id })
+            </li>
 
-         }
+        }
     }
-</ol>
-
+}

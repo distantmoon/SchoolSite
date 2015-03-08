@@ -9,13 +9,11 @@
 </hgroup>
 
 <section id="loginForm">
-<h2>使用本地帐户登录。</h2>
 @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>“登录”表单</legend>
         <ol>
             <li>
                 @Html.LabelFor(m => m.UserName)
@@ -34,16 +32,10 @@
         </ol>
         <input type="submit" value="登录" />
     </fieldset>
-    <p>
-        @Html.ActionLink("Register", "Register") (如果你没有帐户)。
-    </p>
 }
 </section>
 
-<section class="social" id="socialLoginForm">
-    <h2>使用其他服务登录。</h2>
-    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
-</section>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

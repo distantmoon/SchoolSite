@@ -29,6 +29,10 @@
                     <li>@Html.ActionLink("教学工作", "Index", "Teach")</li>
                     <li>@Html.ActionLink("科研工作", "Index", "Research")</li>
                     <li>@Html.ActionLink("师生风采", "Index", "Show")</li>
+                    @if (Request.IsAuthenticated)
+                    {
+                     <li>@Html.ActionLink("注销", "LogOff", "Account")</li>
+                    }
                 </ul>
             </div>
         </nav>
