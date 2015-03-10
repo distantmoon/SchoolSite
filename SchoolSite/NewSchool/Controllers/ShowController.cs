@@ -52,7 +52,7 @@ namespace NewSchool.Controllers
             {
                 return HttpNotFound();
             }
-            var model = new TeacherModel
+            var model = new ShowModel
             {
                 Content = find.Content,
                 Title = find.Title,

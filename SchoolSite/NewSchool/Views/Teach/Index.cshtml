@@ -22,7 +22,7 @@
         </div>
         <div class="panel-body">
             <ol class="list-group">
-                @if (Model != null && Model.Any())
+                @if (Model != null && Model.Any()  && Request.IsAuthenticated)
                 {
                     foreach (TeachModel newsModel in Model)
                     {
