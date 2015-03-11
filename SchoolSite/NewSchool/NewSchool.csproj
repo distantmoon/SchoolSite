@@ -325,7 +325,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <None Include="Properties\PublishProfiles\NewSite.pubxml" />
+    <Content Include="Images\chengshixueyuan.jpg" />
+    <Content Include="Images\jiaotongdaxue.jpg" />
     <Content Include="Images\noimage.jpg" />
+    <Content Include="Images\renwenshehui.png" />
+    <Content Include="Images\xinwenchuanbo.png" />
+    <Content Include="newsimage\3637d585-0971-4b6f-8066-0765c58533ea.jpeg" />
+    <Content Include="newsimage\5325b50d-9b62-4788-ba0b-06cb254e8ffb.jpeg" />
+    <Content Include="newsimage\7b21fb6c-597e-44d5-a48d-0bbe40019a3d.jpeg" />
+    <Content Include="newsimage\b8800546-9cfe-418e-9343-62a6ce0e3526.jpeg" />
+    <Content Include="newsimage\bde1c058-7f90-4560-8e8e-5c88177693b1.jpeg" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
     <Content Include="Scripts\ckeditor\LICENSE.md" />
     <Content Include="Scripts\ckeditor\plugins\scayt\LICENSE.md" />
