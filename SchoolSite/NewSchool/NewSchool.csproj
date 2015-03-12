@@ -41,14 +41,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -195,6 +197,7 @@
     <Compile Include="Controllers\NoticeController.cs" />
     <Compile Include="Controllers\ProfessionController.cs" />
     <Compile Include="Controllers\ResearchController.cs" />
+    <Compile Include="Controllers\ScrollController.cs" />
     <Compile Include="Controllers\ShowController.cs" />
     <Compile Include="Controllers\TeachController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
@@ -209,10 +212,12 @@
     <Compile Include="Models\NoticeModel.cs" />
     <Compile Include="Models\ProfessionModel.cs" />
     <Compile Include="Models\ResearchModel.cs" />
+    <Compile Include="Models\ScrollModel.cs" />
     <Compile Include="Models\ShowModel.cs" />
     <Compile Include="Models\TeacherModel.cs" />
     <Compile Include="Models\TeachModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\ImageUtil.cs" />
     <Compile Include="Util\StringExtension.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -728,6 +733,7 @@
     <Content Include="Views\Communication\Details.cshtml" />
     <Content Include="Views\Communication\Edit.cshtml" />
     <Content Include="Views\Shared\_VMenu.cshtml" />
+    <Content Include="Views\Scroll\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

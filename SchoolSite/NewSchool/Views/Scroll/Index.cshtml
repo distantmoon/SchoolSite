@@ -1,0 +1,36 @@
+﻿@model NewSchool.Models.ShowModel
+
+@{
+    ViewBag.Title = "添加轮播图片";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Create", "Scroll", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <p>
+        每次添加一张，系统会选择最新的三张进行展示
+        图片大小为970X300
+    </p>
+   
+    <div class="form-group">
+        <label for="newsImage" class="control-label col-md-2">轮播图片</label>
+        <div class="col-md-10">
+            <input type="file" name="newsImage" id="newsImage" class="form-control" />
+        </div>
+    </div>
+
+
+
+
+
+    <p class="text-center">
+        <input type="submit" value="添加" class="btn btn-primary" /> 
+    </p>
+}
+
+
+

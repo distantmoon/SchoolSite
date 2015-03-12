@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;

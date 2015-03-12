@@ -33,5 +33,6 @@ namespace SchoolDAO
         public DbSet<Show> Show { get; set; }
         public DbSet<Profession> Profession { get; set; }
         public DbSet<Comm> Comm { get; set; }
+        public DbSet<ScrollImage> ScrollImage { get; set; }
     }
 }

@@ -31,6 +31,7 @@
                     <li>@Html.ActionLink("师生风采", "Index", "Show")</li>
                     @if (Request.IsAuthenticated)
                     {
+                      <li>@Html.ActionLink("修改轮播图","Index","Scroll")</li>
                      <li>@Html.ActionLink("注销", "LogOff", "Account")</li>
                     }
                 </ul>

@@ -13,6 +13,7 @@
         <EntityTypeShape EntityType="SchoolDBModel.Show" Width="1.5" PointX="10.25" PointY="0.75" />
         <EntityTypeShape EntityType="SchoolDBModel.Profession" Width="1.5" PointX="2.75" PointY="3.125" />
         <EntityTypeShape EntityType="SchoolDBModel.Comm" Width="1.5" PointX="0.75" PointY="3.125" />
+        <EntityTypeShape EntityType="SchoolDBModel.ScrollImage" Width="1.5" PointX="5.25" PointY="3" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

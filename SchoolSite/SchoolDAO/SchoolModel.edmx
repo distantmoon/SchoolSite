@@ -60,6 +60,17 @@
           <Property Name="CreateTime" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="Remark" Type="nvarchar" MaxLength="1024" />
         </EntityType>
+        <EntityType Name="ScrollImage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ImageName" Type="nvarchar" MaxLength="80" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="1024" />
+        </EntityType>
         <EntityType Name="Show">
           <Key>
             <PropertyRef Name="Id" />
@@ -99,6 +110,7 @@
           <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Notices" EntityType="Self.Notices" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Profession" EntityType="Self.Profession" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ScrollImage" EntityType="Self.ScrollImage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Show" EntityType="Self.Show" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StudyWorks" EntityType="Self.StudyWorks" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
@@ -160,6 +172,7 @@
           <EntitySet Name="Show" EntityType="SchoolDBModel.Show" />
           <EntitySet Name="Profession" EntityType="SchoolDBModel.Profession" />
           <EntitySet Name="Comm" EntityType="SchoolDBModel.Comm" />
+          <EntitySet Name="ScrollImage" EntityType="SchoolDBModel.ScrollImage" />
         </EntityContainer>
         <EntityType Name="Teacher">
           <Key>
@@ -195,6 +208,17 @@
           <Property Name="Remark" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Comm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImageName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Remark" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ScrollImage">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -298,6 +322,18 @@
           <EntitySetMapping Name="Comm">
             <EntityTypeMapping TypeName="SchoolDBModel.Comm">
               <MappingFragment StoreEntitySet="Comm">
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScrollImage">
+            <EntityTypeMapping TypeName="SchoolDBModel.ScrollImage">
+              <MappingFragment StoreEntitySet="ScrollImage">
                 <ScalarProperty Name="Remark" ColumnName="Remark" />
                 <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
                 <ScalarProperty Name="ImageName" ColumnName="ImageName" />

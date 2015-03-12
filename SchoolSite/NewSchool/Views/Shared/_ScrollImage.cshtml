@@ -1,4 +1,13 @@
-﻿<div class="carousel slide" data-ride="carousel" id="scroolId" style="height: 300px;overflow: hidden;margin-top: -20px;">
+﻿@using NewSchool.Util
+@using SchoolDAO
+@{
+    List<ScrollImage> scrollImages = ImageUtil.GetScroll();
+    
+}
+
+
+
+<div class="carousel slide" data-ride="carousel" id="scroolId" style="height: 300px;overflow: hidden;margin-top: -20px;">
     <ol class="carousel-indicators">
         <li data-target="#scroolId" data-slide-to="0" class="active"></li>
         <li data-target="#scroolId" data-slide-to="1" class=""></li>
@@ -6,24 +15,42 @@
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img data-src="holder.js/1000x500/auto/#777:#777" alt="900x500" style="width: 1000px;height: 300px;" src="@Url.Content("~/Content/images/1.png")" data-holder-rendered="true">
+            @if (scrollImages.Count > 0)
+            {
+                 @:<img data-src="holder.js/1000x500/auto/#777:#777" alt="900x500" style="width: 1000px;height: 300px;" src="@Url.Action("GetImage","Scroll",new {id=scrollImages[0].Id})" data-holder-rendered="true">
+            }
+            else
+            {
+                 @:<img data-src="holder.js/1000x500/auto/#777:#777" alt="900x500" style="width: 1000px;height: 300px;" src="@Url.Content("~/Content/images/1.png")" data-holder-rendered="true">
+            }
             <div class="carousel-caption">
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+               
             </div>
         </div>
         <div class="item">
-            <img data-src="holder.js/1000x500/auto/#666:#666" alt="900x500" style="width: 1000px;height: 300px;" src="@Url.Content("~/Content/images/2.png")" data-holder-rendered="true">
+            @if (scrollImages.Count > 1)
+            {
+                @:<img data-src="holder.js/1000x500/auto/#777:#777" alt="900x500" style="width: 1000px;height: 300px;" src="@Url.Action("GetImage","Scroll",new {id=scrollImages[1].Id})" data-holder-rendered="true">
+            }
+            else
+            {
+                @:<img data-src="holder.js/1000x500/auto/#666:#666" alt="900x500" style="width: 1000px;height: 300px;" src="@Url.Content("~/Content/images/2.png")" data-holder-rendered="true">
+            }
             <div class="carousel-caption">
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              
             </div>
         </div>
         <div class="item">
-            <img data-src="holder.js/1000x500/auto/#555:#5555" alt="900x500" style="width: 1000px;height: 300px;" src="@Url.Content("~/Content/images/3.png")" data-holder-rendered="true">
+            @if (scrollImages.Count > 2)
+            {
+                @:<img data-src="holder.js/1000x500/auto/#777:#777" alt="900x500" style="width: 1000px;height: 300px;" src="@Url.Action("GetImage","Scroll",new {id=scrollImages[2].Id})" data-holder-rendered="true">
+            }
+            else
+            {
+                @:<img data-src="holder.js/1000x500/auto/#555:#5555" alt="900x500" style="width: 1000px;height: 300px;" src="@Url.Content("~/Content/images/3.png")" data-holder-rendered="true">
+            }
             <div class="carousel-caption">
-                <h3>Third slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+               
             </div>
         </div>
     </div>
