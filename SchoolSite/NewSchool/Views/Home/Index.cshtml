@@ -1,4 +1,6 @@
-﻿
+﻿@using NewSchool.Models
+@using SchoolDAO
+
 <style>
 
     ul.normal li {
@@ -33,6 +35,7 @@
             <li data-target="#myCarousel" data-slide-to="2" class=""></li>
         </ol>
         <div class="carousel-inner" role="listbox">
+           
             @Html.Action("Show","News")
         </div>
         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -54,6 +57,17 @@
         </div>
         <div class="panel-body">
             <ul class="normal list-unstyled" id="newsUl">
+                @{
+                    SchoolString db = new SchoolString();
+                    List<News> news = db.News.Take(12).OrderByDescending(p => p.CreateTime).ToList();
+                    foreach (News newse in news)
+                    {
+                      <li>
+                        <span>@newse.CreateTime.ToShortDateString()</span>
+                        <a href="@Url.Action("Details", "News", new { Id = @newse.Id })" title="@newse.Title">@newse.Title</a>
+                    </li>
+                    }
+                }
             </ul>
         </div>
     </div>
@@ -70,6 +84,17 @@
             </div>
             <div class="panel-body">
                 <ul class="normal list-unstyled" id="noticeUl">
+                    @{
+                        SchoolString db2 = new SchoolString();
+                        List<Notices> noticeses = db2.Notices.Take(11).OrderByDescending(p => p.CreateTime).ToList();
+                        foreach (Notices newse in noticeses)
+                        {
+                            <li>
+                                <span>@newse.CreateTime.ToShortDateString()</span>
+                                <a href="@Url.Action("Details", "News", new { Id = @newse.Id })" title="@newse.Title">@newse.Title</a>
+                            </li>
+                        }
+                    }  
                 </ul>
             </div>
         </div>
@@ -81,6 +106,31 @@
         </div>
         <div class="panel-body" style="padding: 0px;">
             <marquee style="margin: 0px;" id="affiche" align="left" behavior="alternate" direction="up" height="370" width="640" hspace="50" vspace="20" loop="-1" scrollamount="1" scrolldelay="0" onmouseout="this.start()" onmouseover="this.stop()">
+                class="normal list-unstyled" id="noticeUl">
+                @{
+                    SchoolString db3 = new SchoolString();
+                    List<Show> shows = db3.Show.OrderByDescending(p => p.CreateTime).ToList();
+                    foreach (Show show in shows)
+                    {
+                        <div class="well">
+                    @if (!string.IsNullOrEmpty(show.ImageName))
+                    {
+                        <img style="height: 200px; width: 200px;" src="@Url.Action("GetImage", "Show", new { show.Id })" />
+
+                    }
+                    else
+                    {
+                        <img style="height: 200px; width: 200px;" src="@Url.Content("~/Images/noimage.jpg")" />
+                    }
+                    <div style="float:right;width: 380px;">
+                        <p>@show.Title</p>
+                        <p>@Html.Raw(show.Content)</p>
+                    </div>
+                </div>
+                    }
+                }
+                
+                
             </marquee>
         </div>
     </div>
@@ -124,13 +174,3 @@
 
     </div>
 </div>
-@section Scripts
-{
-    <script>
-        $(document).ready(function() {
-            $("#newsUl").load("@Url.Action("Index","News")");
-            $("#noticeUl").load("@Url.Action("Index","Notice")");  
-            $("#affiche").load("@Url.Action("Index","Show")");  
-        });
-    </script>
-}

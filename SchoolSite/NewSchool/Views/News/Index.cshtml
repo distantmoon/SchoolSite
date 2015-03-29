@@ -26,8 +26,12 @@
                     foreach (NewsModel newsModel in Model)
                     {
                         <li class="list-group-item">
-                            @Html.ActionLink("修改", "Edit", new { id = newsModel.Id }) |
-                            @Html.ActionLink("删除", "Delete", new { id = newsModel.Id })
+                            @if (Request.IsAuthenticated)
+                            {
+                                    @:@Html.ActionLink("修改", "Edit", new { id = newsModel.Id }) |
+                                    @:@Html.ActionLink("删除", "Delete", new { id = newsModel.Id })
+                            }
+                          
                             @newsModel.CreateTime.ToShortDateString()
                             @Html.ActionLink(newsModel.Title, "Details", new { id = newsModel.Id })
                         </li>

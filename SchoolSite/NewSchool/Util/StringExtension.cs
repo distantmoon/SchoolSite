@@ -12,7 +12,12 @@ namespace NewSchool.Util
 
         public static string CutNum(this string source, int count)
         {
+            if(source.Length>count)
             return source.Substring(0, count) + "......";
+            else
+            {
+                return source;
+            }
         }
 
         public static string NoHTML(this  string htmlstring)

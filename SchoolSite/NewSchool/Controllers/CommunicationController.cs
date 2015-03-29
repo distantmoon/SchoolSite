@@ -78,7 +78,7 @@ namespace NewSchool.Controllers
         // POST: /News/Create
         public ActionResult GetImage(int id)
         {
-            News newsModel = db.News.Find(id);
+            Comm newsModel = db.Comm.Find(id);
             if (newsModel == null || string.IsNullOrEmpty(newsModel.ImageName))
             {
                 return new EmptyResult();

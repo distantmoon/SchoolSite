@@ -23,6 +23,10 @@
    
 </fieldset>
 <p class="text-center">
-    @Html.ActionLink("编辑", "Edit", new { id=Model.Id },new {@class="btn btn-default"}) |
+    @if (Request.IsAuthenticated)
+    {
+    @Html.ActionLink("编辑", "Edit", new { id=Model.Id },new {@class="btn btn-default"}) 
+    }
+    
     @Html.ActionLink("返回列表", "Index", "News", null, new { @class = "btn btn-primary" })
 </p>
